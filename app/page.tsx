@@ -18,13 +18,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100">
+    <div className="min-h-screen font-sans text-zinc-900 dark:bg-black/80 dark:text-zinc-100">
       <div className="relative overflow-hidden h-screen flex items-center justify-center">
         <AppBackground />
         <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto">
-          <div className="mt-10 flex w-full justify-center max-w-6xl mx-4">
+          <div className=" flex w-full justify-center max-w-6xl mx-4">
             <motion.section
-              className="w-full space-y-6 text-left text-lg text-zinc-700 dark:text-zinc-200"
+              className="w-full space-y-2 text-left text-lg text-zinc-700 dark:text-zinc-200"
               variants={containerMotion}
               initial="hidden"
               animate="show"
@@ -93,7 +93,7 @@ export default function Home() {
                 className="space-y-2"
                 variants={itemMotion}
               >
-                <div className="flex flex-wrap items-center gap-8">
+                <div className="flex flex-wrap items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
   <div
     className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-8xl 
@@ -124,10 +124,10 @@ export default function Home() {
                   {item.description}
                 </p>
                 {item.kind === "contact" && item.contacts ? (
-                  <div className="mt-3 space-y-4 text-base">
+                  <div className="mt-3 space-y-2 text-base">
                     {item.contacts.map((person) => (
-                      <div key={person.name} className="space-y-2">
-                        <div className=" font-bold text-white/80 font-poppins ">
+                      <div key={person.name} className="space-y-1">
+                        <div className=" font-bold text-white/80 font-poppins text-sm  ">
                           {person.name}
                         </div>
                         <div className="space-y-1">
@@ -137,12 +137,12 @@ export default function Home() {
                               href={contact.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-3 text-white transition-colors hover:text-white"
+                              className="flex items-center gap-3 text-white transition-colors hover:text-white text-sm"
                             >
                               <span className="text-amber-200">
                                 {contact.icon}
                               </span>
-                              <span>{contact.value}</span>
+                              <span className="text-sm">{contact.value}</span>
                             </a>
                           ))}
                         </div>
