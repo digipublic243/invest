@@ -18,13 +18,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen font-sans text-zinc-900 dark:bg-black/80 dark:text-zinc-100">
+    <div className="min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100">
       <div className="relative overflow-hidden h-screen flex items-center justify-center">
         <AppBackground />
         <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto">
           <div className=" flex w-full justify-center max-w-6xl mx-4">
             <motion.section
-              className="w-full space-y-2 text-left text-lg text-zinc-700 dark:text-zinc-200"
+              className="w-full space-y-8 text-left text-lg text-zinc-700 dark:text-zinc-200"
               variants={containerMotion}
               initial="hidden"
               animate="show"
@@ -95,12 +95,9 @@ export default function Home() {
               >
                 <div className="flex flex-wrap items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
-  <div
-    className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-8xl 
-    bg-linear-to-r from-zinc-500 via-zinc-100 to-zinc-500 bg-clip-text text-transparent drop-shadow-2xl"
-  >
-    {item.title}
-  </div>
+                <div className="max-w-4xl font-black font-poppins md:text-8xl text-5xl tracking-tighter silver-3d">
+  {item.title}
+</div>
 
   {/* Reflet qui passe */}
   <div className="absolute inset-0 -translate-x-full animate-[shine_2.5s_infinite] bg-linear-to-r from-transparent via-white/50 to-transparent blur-sm"></div>

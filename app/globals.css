@@ -32,3 +32,25 @@ body {
   color: hsl(var(--foreground));
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.silver-3d {
+  background: linear-gradient(
+    to bottom,
+    #fcfcfc 0%,
+    #f3f1f1 30%,
+    #9b9b9b 50%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 1px 0 #a3a3a3,
+    0 2px 0 #a3a1a1,
+    0 3px 0 #c2c2c2,
+    0 4px 0 #888686,
+    0 6px 2px rgba(0, 0, 0, 0.25),
+    0 8px 8px rgba(0, 0, 0, 0.35);
+}
