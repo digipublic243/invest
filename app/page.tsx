@@ -1,5 +1,6 @@
 "use client";
 import PageHeader from "@/components/shared/page-header";
+import { ArrowRightIcon, Icon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
 
         <main className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-22 sm:px-10">
           <div className="mb-10 flex w-full justify-center text-center">
-            <h1 className="max-w-3xl font-poppins text-7xl font-semibold leading-tight tracking-tight sm:text-6xl">
+            <h1 className="max-w-3xl font-poppins text-8xl font-semibold leading-tight tracking-tight sm:text-6xl">
               Introduction
             </h1>
           </div>
@@ -22,6 +23,7 @@ export default function Home() {
             {[
               {
                 title: "Zibo Mine",
+                icon: <ArrowRightIcon className="h-4 w-4" />,
                 description:
                   "Acces direct a la plateforme miniere de Zibo Mining.",
                 href: "https://zibomines.com/",

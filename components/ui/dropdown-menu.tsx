@@ -18,7 +18,7 @@ type DropdownMenuContextValue = {
   open: boolean;
   setOpen: (open: boolean) => void;
   closeMenu: () => void;
-  menuRef: React.RefObject<HTMLDivElement>;
+  menuRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const DropdownMenuContext = createContext<DropdownMenuContextValue | null>(null);
