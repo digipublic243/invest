@@ -1,7 +1,21 @@
 "use client";
+import { motion } from "framer-motion";
 import { ArrowRightIcon } from "lucide-react";
 
 export default function Home() {
+  const containerMotion = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.42, delayChildren: 0.2 },
+    },
+  };
+
+  const itemMotion = {
+    hidden: { opacity: 0, y: 16 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100">
       <div className="relative overflow-hidden h-screen flex items-center justify-center">
@@ -11,7 +25,12 @@ export default function Home() {
         </div>
         <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto">
           <div className="mt-10 flex w-full justify-center max-w-6xl mx-4">
-            <section className="w-full space-y-6 text-left text-lg text-zinc-700 dark:text-zinc-200">
+            <motion.section
+              className="w-full space-y-6 text-left text-lg text-zinc-700 dark:text-zinc-200"
+              variants={containerMotion}
+              initial="hidden"
+              animate="show"
+            >
               {[
               {
                 title: "Zibo Mine",
@@ -51,7 +70,11 @@ export default function Home() {
                 ],
               },
               ].map((item) => (
-              <div key={item.title} className="space-y-2">
+              <motion.div
+                key={item.title}
+                className="space-y-2"
+                variants={itemMotion}
+              >
                 <div className="flex flex-wrap items-center gap-8">
                   <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-8xl">
                     {item.title}
@@ -86,9 +109,9 @@ export default function Home() {
                     ))}
                   </div>
                 ) : null}
-              </div>
+              </motion.div>
             ))}
-            </section>
+            </motion.section>
           </div>
 
         </main>
