@@ -6,12 +6,16 @@
     --background: 45 15% 90%;
     --foreground: 210 35% 18%;
     --primary: 210 40% 28%;
+    --glow-amber: rgba(253, 230, 138, 0.4);
+    --glow-indigo: rgba(165, 180, 252, 0.4);
   }
 
   .dark {
     --background: 210 40% 8%;
     --foreground: 45 20% 96%;
     --primary: 210 50% 60%;
+    --glow-amber: rgba(252, 211, 77, 0.2);
+    --glow-indigo: rgba(99, 102, 241, 0.2);
   }
 }
 
