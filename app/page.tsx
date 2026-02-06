@@ -85,14 +85,34 @@ export default function Home() {
                 kind: "contact",
                 contacts: [
                   {
-                    icon: <Mail className="h-4 w-4" />,
-                    value: "bernard.muhindo@protonmail.com",
-                    href: "mailto:bernard.muhindo@protonmail.com",
+                    name: "Senator Bernard Muhindo",
+                    items: [
+                      {
+                        icon: <Mail className="h-4 w-4" />,
+                        value: "bernard.muhindo@pm.me",
+                        href: "mailto:bernard.muhindo@pm.me",
+                      },
+                      {
+                        icon: <Phone className="h-4 w-4" />,
+                        value: "+243 813 991 155",
+                        href: "tel:+243813991155",
+                      },
+                    ],
                   },
                   {
-                    icon: <Phone className="h-4 w-4" />,
-                    value: "+243 813 991 155",
-                    href: "tel:+243813991155",
+                    name: "Peter Orena",
+                    items: [
+                      {
+                        icon: <Mail className="h-4 w-4" />,
+                        value: "peter@zibomines.com",
+                        href: "mailto:peter@zibomines.com",
+                      },
+                      {
+                        icon: <Phone className="h-4 w-4" />,
+                        value: "+1 516 504 5719",
+                        href: "tel:+15165045719",
+                      },
+                    ],
                   },
                 ],
               },
@@ -103,9 +123,10 @@ export default function Home() {
                 variants={itemMotion}
               >
                 <div className="flex flex-wrap items-center gap-8">
-                  <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-8xl">
-                    {item.title}
-                  </div>
+                <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-8xl drop-shadow-2xl">
+  {item.title}
+</div>
+
                   {!item.kind && (
                     <a
                       href={item.href}
@@ -122,18 +143,29 @@ export default function Home() {
                   {item.description}
                 </p>
                 {item.kind === "contact" && item.contacts ? (
-                  <div className="mt-3 space-y-1 text-base">
-                    {item.contacts.map((contact) => (
-                      <a
-                        key={contact.value}
-                        href={contact.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-white transition-colors hover:text-white"
-                      >
-                        <span className="text-amber-200text-amber-200">{contact.icon}</span>
-                        <span>{contact.value}</span>
-                      </a>
+                  <div className="mt-3 space-y-4 text-base">
+                    {item.contacts.map((person) => (
+                      <div key={person.name} className="space-y-2">
+                        <div className=" font-bold text-white/80 font-poppins ">
+                          {person.name}
+                        </div>
+                        <div className="space-y-1">
+                          {person.items.map((contact) => (
+                            <a
+                              key={`${person.name}-${contact.value}`}
+                              href={contact.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-3 text-white transition-colors hover:text-white"
+                            >
+                              <span className="text-amber-200">
+                                {contact.icon}
+                              </span>
+                              <span>{contact.value}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 ) : null}
