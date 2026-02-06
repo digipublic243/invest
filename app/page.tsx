@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, Mail, Phone } from "lucide-react";
 
 export default function Home() {
   const containerMotion = {
@@ -73,7 +73,7 @@ export default function Home() {
               {
                 title: "Prospectus",
                 description:
-                  "En savoir plus",
+                  "Know more",
                 href: "/doc.pdf",
               },
             
@@ -85,12 +85,12 @@ export default function Home() {
                 kind: "contact",
                 contacts: [
                   {
-                    label: "Adresse email",
-                    value: "bernard.muhindo@sycamore.cd",
-                    href: "mailto:bernard.muhindo@sycamore.cd",
+                    icon: <Mail className="h-4 w-4" />,
+                    value: "bernard.muhindo@protonmail.com",
+                    href: "mailto:bernard.muhindo@protonmail.com",
                   },
                   {
-                    label: "Numero de telephone",
+                    icon: <Phone className="h-4 w-4" />,
                     value: "+243 813 991 155",
                     href: "tel:+243813991155",
                   },
@@ -125,13 +125,14 @@ export default function Home() {
                   <div className="mt-3 space-y-1 text-base">
                     {item.contacts.map((contact) => (
                       <a
-                        key={contact.label}
+                        key={contact.value}
                         href={contact.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-[#d42727] transition-colors hover:text-[#ff0909] dark:text-[#ff0909] dark:hover:text-[#ff0909]"
+                        className="flex items-center gap-3 text-white transition-colors hover:text-white"
                       >
-                        {contact.label}: {contact.value}
+                        <span className="text-[#ff0909]">{contact.icon}</span>
+                        <span>{contact.value}</span>
                       </a>
                     ))}
                   </div>
