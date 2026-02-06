@@ -58,14 +58,14 @@ export default function Home() {
                 kind: "contact",
                 contacts: [
                   {
-                    label: "Site officiel",
-                    value: "be-the-next.com",
-                    href: "https://be-the-next.com/",
+                    label: "Adresse email",
+                    value: "contact@be-the-next.com",
+                    href: "mailto:contact@be-the-next.com",
                   },
                   {
-                    label: "Support",
-                    value: "Contact via le site",
-                    href: "https://be-the-next.com/",
+                    label: "Numero de telephone",
+                    value: "+243 997 777 777",
+                    href: "tel:+243997777777",
                   },
                 ],
               },
