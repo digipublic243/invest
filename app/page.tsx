@@ -19,9 +19,36 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100">
       <div className="relative overflow-hidden h-screen flex items-center justify-center">
-        <div className="pointer-events-none absolute inset-0 ">
-          <div className="absolute -top-36 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-300/40 blur-[96px] dark:bg-amber-400/20" />
-          <div className="absolute -bottom-32 right-[-12%] h-80 w-80 rounded-full bg-indigo-300/40 blur-[96px] dark:bg-indigo-500/20" />
+        <div className="pointer-events-none absolute inset-0">
+          <motion.div
+            className="absolute -top-36 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-300/40 blur-[96px] dark:bg-amber-400/20"
+            animate={{
+              x: [-30, 20, -30],
+              y: [0, 18, 0],
+              scale: [1, 1.08, 1],
+              opacity: [0.6, 0.9, 0.6],
+            }}
+            transition={{
+              duration: 16,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-32 right-[-12%] h-80 w-80 rounded-full bg-indigo-300/40 blur-[96px] dark:bg-indigo-500/20"
+            animate={{
+              x: [20, -15, 20],
+              y: [0, -14, 0],
+              scale: [1, 1.12, 1],
+              opacity: [0.55, 0.85, 0.55],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
         </div>
         <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto">
           <div className="mt-10 flex w-full justify-center max-w-6xl mx-4">
