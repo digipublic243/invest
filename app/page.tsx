@@ -21,7 +21,7 @@ export default function Home() {
       <div className="relative overflow-hidden h-screen flex items-center justify-center">
         <div className="pointer-events-none absolute inset-0">
           <motion.div
-            className="absolute -top-36 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-300/40 blur-[96px] dark:bg-amber-400/20"
+            className="absolute -top-36 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#ff0909]/40 blur-[96px] dark:bg-[#ff0909]/20"
             animate={{
               x: [-30, 20, -30],
               y: [0, 18, 0],
@@ -64,7 +64,7 @@ export default function Home() {
                 icon: <ArrowRightIcon className="h-4 w-4" />,
                 description: (
                   <>
-                    One of our <span className="font-semibold text-amber-200">success</span>{" "}
+                    One of our <span className="font-semibold text-[#ff0909]">success</span>{" "}
                     story.
                   </>
                 ),
@@ -74,7 +74,7 @@ export default function Home() {
                 title: "Prospectus",
                 description:
                   "En savoir plus",
-                href: "http://agecongo.sycamore.cd/",
+                href: "/doc.pdf",
               },
             
               {
@@ -86,13 +86,13 @@ export default function Home() {
                 contacts: [
                   {
                     label: "Adresse email",
-                    value: "contact@be-the-next.com",
-                    href: "mailto:contact@be-the-next.com",
+                    value: "bernard.muhindo@sycamore.cd",
+                    href: "mailto:bernard.muhindo@sycamore.cd",
                   },
                   {
                     label: "Numero de telephone",
-                    value: "+243 997 777 777",
-                    href: "tel:+243997777777",
+                    value: "+243 813 991 155",
+                    href: "tel:+243813991155",
                   },
                 ],
               },
@@ -111,7 +111,7 @@ export default function Home() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center text-amber-700 transition-colors hover:text-amber-900 dark:text-amber-200 dark:hover:text-amber-100"
+                      className="group inline-flex items-center text-[#ff0909] transition-colors hover:text-[#ff0909] dark:text-[#ff0909] dark:hover:text-[#ff0909]"
                       aria-label={`Ouvrir ${item.title}`}
                     >
                       <ArrowRightIcon className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" size={24} />
@@ -129,7 +129,7 @@ export default function Home() {
                         href={contact.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-amber-700 transition-colors hover:text-amber-900 dark:text-amber-200 dark:hover:text-amber-100"
+                        className="block text-[#d42727] transition-colors hover:text-[#ff0909] dark:text-[#ff0909] dark:hover:text-[#ff0909]"
                       >
                         {contact.label}: {contact.value}
                       </a>
