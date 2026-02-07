@@ -117,8 +117,8 @@ export default function Home() {
                       },
                       {
                         icon: <Phone className="h-4 w-4" />,
-                        value: "+1 516 504 5719",
-                        href: "tel:+15165045719",
+                        value: "+243 821 816 662",
+                        href: "tel:+243821816662",
                       },
                     ],
                   },
