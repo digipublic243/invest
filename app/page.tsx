@@ -48,7 +48,7 @@ export default function Home() {
                 href: "/doc.pdf",
               },
               {
-                title: "Unlocked deals",
+                title: "Be The Next",
                 description: (
                   <ol className="list-decimal space-y-1 pl-5">
                     <li>
@@ -67,11 +67,6 @@ export default function Home() {
                     </li>
                   </ol>
                 ),
-              },
-              {
-                title: "Be The Next",
-                //   "Un contact.",
-                // href: "https://be-the-next.com/",
                 kind: "contact",
                 contacts: [
                   {
@@ -102,15 +97,60 @@ export default function Home() {
                         value: "+243 821 816 662",
                         href: "tel:+243821816662",
                       },
-                      // {
-                      //   icon: <Phone className="h-4 w-4" />,
-                      //   value: "+243 821 816 662",
-                      //   href: "tel:+243821816662",
-                      // },
+                      {
+                        icon: <Phone className="h-4 w-4" />,
+                        value: "+1 516 504 5719",
+                        href: "tel:+15165045719",
+                      },
                     ],
                   },
                 ],
+            
               },
+              // {
+              //   title: "Be The Next",
+              //   //   "Un contact.",
+              //   // href: "https://be-the-next.com/",
+              //   kind: "contact",
+              //   contacts: [
+              //     {
+              //       name: "Senator Bernard Muhindo",
+              //       items: [
+              //         {
+              //           icon: <Mail className="h-4 w-4" />,
+              //           value: "bernard.muhindo@pm.me",
+              //           href: "mailto:bernard.muhindo@pm.me",
+              //         },
+              //         {
+              //           icon: <Phone className="h-4 w-4" />,
+              //           value: "+243 813 991 155",
+              //           href: "tel:+243813991155",
+              //         },
+              //       ],
+              //     },
+              //     {
+              //       name: "Peter Orena",
+              //       items: [
+              //         {
+              //           icon: <Mail className="h-4 w-4" />,
+              //           value: "peter@zibomines.com",
+              //           href: "mailto:peter@zibomines.com",
+              //         },
+              //         {
+              //           icon: <Phone className="h-4 w-4" />,
+              //           value: "+243 821 816 662",
+              //           href: "tel:+243821816662",
+              //         },
+              //         {
+              //           icon: <Phone className="h-4 w-4" />,
+              //           value: "+1 516 504 5719",
+              //           href: "tel:+15165045719",
+              //         },
+              //       ],
+              //     },
+              //   ],
+            
+              //   },
               ].map((item) => (
               <motion.div
                 key={item.title}
@@ -142,36 +182,54 @@ export default function Home() {
                   )}
                 </div>
                 <div className="md:text-base text-xs text-zinc-600 dark:text-zinc-300">
-                  {item.description}
+                  {item.title === "Be The Next" && (
+                    <div className="mb-1 flex items-center text-xl md:text-4xl gap-1 pl-2  font-semibold uppercase tracking-wide ">
+                      <ArrowRightIcon className="h-3.5 w-3.5" />
+                      <span>Unlocked deals</span>
+                    </div>
+                  )}
+                  <div className={item.title === "Be The Next" ? "pl-6" : undefined}>
+                    {item.description}
+                  </div>
                 </div>
                 {item.kind === "contact" && item.contacts ? (
                   <div className="mt-3 space-y-1 text-base">
-                    {item.contacts.map((person) => (
-                      <div key={person.name} className="space-y-2">
-                        <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
-                          {person.name}
-                        </div>
-                        <div className="space-y-1">
-                        {person.items.map((contact, index) => (
-                          <motion.a
-                            key={`${person.name}-${contact.value}-${contact.href}-${index}`}
-                            href={contact.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 text-white transition-colors hover:text-white"
-                            initial={{ opacity: 0, x: 16  }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 2.4, delay: index * 1.45 }}
-                          >
-                            <span className="text-amber-200">
-                              {contact.icon}
-                            </span>
-                            <span className="md:text-sm text-xs">{contact.value}</span>
-                          </motion.a>
-                        ))}
-                        </div>
+                    {item.title === "Be The Next" && (
+                      <div className="flex items-center gap-1 pl-2 text-xl md:text-4xl font-semibold uppercase tracking-wide ">
+                        <ArrowRightIcon className="h-3.5 w-3.5" />
+                        <span>Contact</span>
                       </div>
-                    ))}
+                    )}
+                    <div className={item.title === "Be The Next" ? "pl-6" : undefined}>
+                      {item.contacts.map((person) => (
+                        <div key={person.name} className="space-y-2">
+                          <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
+                            {person.name}
+                          </div>
+                          <div className="space-y-1">
+                            {person.items.map((contact, index) => (
+                              <motion.a
+                                key={`${person.name}-${contact.value}-${contact.href}-${index}`}
+                                href={contact.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-white transition-colors hover:text-white"
+                                initial={{ opacity: 0, x: 16 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 2.4, delay: index * 1.45 }}
+                              >
+                                <span className="text-amber-200">
+                                  {contact.icon}
+                                </span>
+                                <span className="md:text-sm text-xs">
+                                  {contact.value}
+                                </span>
+                              </motion.a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ) : null}
               </motion.div>
