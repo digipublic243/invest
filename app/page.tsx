@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="md:min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100 ">
-      <div className=" relative overflow-hidden  flex items-center justify-center h-[91vh]">
+      <div className=" relative overflow-hidden  flex items-center justify-center h-screen">
         <AppBackground />
         <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto h-auto ">
           <div className=" flex w-full justify-center max-w-6xl mx-4">
@@ -119,12 +119,12 @@ export default function Home() {
               >
                 <div className="flex flex-wrap items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
-                <div className="max-w-4xl font-black font-poppins md:text-8xl text-4xl tracking-tighter silver-3d">
+                <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-8xl drop-shadow-2xl">
   {item.title}
 </div>
 
   {/* Reflet qui passe */}
-  <div className="absolute inset-0 -translate-x-full animate-[shine_2.5s_infinite] bg-linear-to-r from-transparent via-white/50 to-transparent blur-sm"></div>
+  {/* <div className="absolute inset-0 -translate-x-full animate-[shine_2.5s_infinite] bg-linear-to-r from-transparent via-white/50 to-transparent blur-sm"></div> */}
 </div>
 
 
