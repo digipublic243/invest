@@ -24,7 +24,7 @@ export default function Home() {
         <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto h-auto ">
           <div className=" flex w-full justify-center max-w-6xl mx-4">
             <motion.section
-              className="w-full space-y-8 text-left text-lg text-zinc-700 dark:text-zinc-200"
+              className="w-full md:space-y-8 space-y-4 text-left text-lg text-zinc-700 dark:text-zinc-200"
               variants={containerMotion}
               initial="hidden"
               animate="show"
@@ -114,7 +114,7 @@ export default function Home() {
               ].map((item) => (
               <motion.div
                 key={item.title}
-                className="space-y-1 md:space-y-2"
+                className="md:space-y-1 space-y-0"
                 variants={itemMotion}
               >
                 <div className="flex flex-wrap items-center gap-4">
