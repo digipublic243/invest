@@ -102,11 +102,11 @@ export default function Home() {
                         value: "+243 821 816 662",
                         href: "tel:+243821816662",
                       },
-                      {
-                        icon: <Phone className="h-4 w-4" />,
-                        value: "+243 821 816 662",
-                        href: "tel:+243821816662",
-                      },
+                      // {
+                      //   icon: <Phone className="h-4 w-4" />,
+                      //   value: "+243 821 816 662",
+                      //   href: "tel:+243821816662",
+                      // },
                     ],
                   },
                 ],
@@ -129,7 +129,7 @@ export default function Home() {
 
 
 
-                  {!item.kind && (
+                  {!item.kind && item.title !== "Unlocked deals" && (
                     <a
                       href={item.href}
                       target="_blank"
@@ -145,27 +145,30 @@ export default function Home() {
                   {item.description}
                 </div>
                 {item.kind === "contact" && item.contacts ? (
-                  <div className="mt-3 space-y-2 text-base">
+                  <div className="mt-3 space-y-1 text-base">
                     {item.contacts.map((person) => (
-                      <div key={person.name} className="space-y-1">
+                      <div key={person.name} className="space-y-2">
                         <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
                           {person.name}
                         </div>
                         <div className="space-y-1">
                         {person.items.map((contact, index) => (
-                            <a
+                          <motion.a
                             key={`${person.name}-${contact.value}-${contact.href}-${index}`}
-                              href={contact.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-3 text-white transition-colors hover:text-white"
-                            >
-                              <span className="text-amber-200">
-                                {contact.icon}
-                              </span>
-                              <span className="md:text-sm text-xs">{contact.value}</span>
-                            </a>
-                          ))}
+                            href={contact.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 text-white transition-colors hover:text-white"
+                            initial={{ opacity: 0, x: 16  }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 2.4, delay: index * 1.45 }}
+                          >
+                            <span className="text-amber-200">
+                              {contact.icon}
+                            </span>
+                            <span className="md:text-sm text-xs">{contact.value}</span>
+                          </motion.a>
+                        ))}
                         </div>
                       </div>
                     ))}
