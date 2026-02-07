@@ -77,7 +77,7 @@ export default function Home() {
                 href: "/doc.pdf",
               },
                           {
-                title: "Unlocked deal",
+                title: "Unlocked deals",
                  description: (
   <>
     1. Acquisition of Chemaf by Virtus Mineral Group (USA).
