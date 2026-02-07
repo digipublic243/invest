@@ -80,9 +80,14 @@ export default function Home() {
               {
                 title: "Be The Next",
                  description: (
-<>Unlocked deals:
-1. Acquisition of Chemaf by Virtus Mineral Group(USA).
-2. Acquisition of GEA Solar by Vinergo (Vietnam)</>),
+  <>
+    Unlocked deals:
+    <ol>
+      <li>Acquisition of Chemaf by Virtus Mineral Group (USA).</li>
+      <li>Acquisition of GEA Solar by Vinergo (Vietnam)</li>
+    </ol>
+  </>
+),
                 //   "Un contact.",
                 // href: "https://be-the-next.com/",
                 kind: "contact",
