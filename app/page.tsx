@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRightIcon, Mail, Phone } from "lucide-react";
+import AppBackground from "@/components/shared/app-background";
 
 export default function Home() {
   const containerMotion = {
@@ -17,50 +18,20 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100">
-      <div className="relative overflow-hidden h-screen flex items-center justify-center">
-        <div className="pointer-events-none absolute inset-0">
-          <motion.div
-            className="absolute -top-36 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-amber-200/40 blur-[96px] dark:bg-amber-300/20"
-            animate={{
-              x: [-30, 20, -30],
-              y: [0, 18, 0],
-              scale: [1, 1.08, 1],
-              opacity: [0.6, 0.9, 0.6],
-            }}
-            transition={{
-              duration: 16,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute -bottom-32 right-[-12%] h-80 w-80 rounded-full bg-indigo-300/40 blur-[96px] dark:bg-indigo-500/20"
-            animate={{
-              x: [20, -15, 20],
-              y: [0, -14, 0],
-              scale: [1, 1.12, 1],
-              opacity: [0.55, 0.85, 0.55],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          />
-        </div>
-        <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto">
-          <div className="mt-10 flex w-full justify-center max-w-6xl mx-4">
+    <div className="md:min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100 ">
+      <div className=" relative overflow-hidden  flex items-center justify-center h-screen">
+        <AppBackground />
+        <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto h-auto ">
+          <div className=" flex w-full justify-center max-w-6xl mx-4">
             <motion.section
-              className="w-full space-y-6 text-left text-lg text-zinc-700 dark:text-zinc-200"
+              className="w-full md:space-y-8 space-y-4 text-left text-lg text-zinc-700 dark:text-zinc-200"
               variants={containerMotion}
               initial="hidden"
               animate="show"
             >
               {[
               {
-                title: "Zibo Mine",
+                title: "Zibo Mining",
                 icon: <ArrowRightIcon className="h-4 w-4" />,
                 description: (
                   <>
@@ -76,15 +47,27 @@ export default function Home() {
                   "Know more",
                 href: "/doc.pdf",
               },
-                          {
+              {
                 title: "Unlocked deals",
-                 description: (
-  <>
-    1. Acquisition of Chemaf by Virtus Mineral Group (USA).
-    <br />
-    2. Acquisition of GEA Solar by Vinergo (Vietnam)
-  </>
-),},
+                description: (
+                  <ol className="list-decimal space-y-1 pl-5">
+                    <li>
+                      Acquisition of Chemaf by 
+                       <span className="block text-amber-200 sm:inline font-semibold">
+                        {" "}
+                        Virtus Mineral Group (USA).
+                      </span>
+                    </li>
+                    <li>
+                      Acquisition of GEA Solar by
+                       <span className="block text-amber-200 sm:inline font-semibold">
+                        {" "}
+                        Vinergo (Vietnam)
+                      </span>
+                    </li>
+                  </ol>
+                ),
+              },
               {
                 title: "Be The Next",
                 //   "Un contact.",
@@ -119,6 +102,11 @@ export default function Home() {
                         value: "+243 821 816 662",
                         href: "tel:+243821816662",
                       },
+                      // {
+                      //   icon: <Phone className="h-4 w-4" />,
+                      //   value: "+243 821 816 662",
+                      //   href: "tel:+243821816662",
+                      // },
                     ],
                   },
                 ],
@@ -126,15 +114,22 @@ export default function Home() {
               ].map((item) => (
               <motion.div
                 key={item.title}
-                className="space-y-2"
+                className="md:space-y-1 space-y-0"
                 variants={itemMotion}
               >
-                <div className="flex flex-wrap items-center gap-8">
-                <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-6xl lg:text-8xl drop-shadow-2xl">
+                <div className="flex flex-wrap items-center gap-4">
+                <div className="relative inline-block overflow-hidden">
+                <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-8xl drop-shadow-2xl">
   {item.title}
 </div>
 
-                  {!item.kind && (
+  {/* Reflet qui passe */}
+  {/* <div className="absolute inset-0 -translate-x-full animate-[shine_2.5s_infinite] bg-linear-to-r from-transparent via-white/50 to-transparent blur-sm"></div> */}
+</div>
+
+
+
+                  {!item.kind && item.title !== "Unlocked deals" && (
                     <a
                       href={item.href}
                       target="_blank"
@@ -146,31 +141,34 @@ export default function Home() {
                     </a>
                   )}
                 </div>
-                <p className="text-base text-zinc-600 dark:text-zinc-300 ">
+                <div className="md:text-base text-xs text-zinc-600 dark:text-zinc-300">
                   {item.description}
-                </p>
+                </div>
                 {item.kind === "contact" && item.contacts ? (
-                  <div className="mt-3 space-y-4 text-base">
+                  <div className="mt-3 space-y-1 text-base">
                     {item.contacts.map((person) => (
                       <div key={person.name} className="space-y-2">
-                        <div className=" font-bold text-white/80 font-poppins ">
+                        <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
                           {person.name}
                         </div>
                         <div className="space-y-1">
-                          {person.items.map((contact) => (
-                            <a
-                              key={`${person.name}-${contact.value}`}
-                              href={contact.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-3 text-white transition-colors hover:text-white"
-                            >
-                              <span className="text-amber-200">
-                                {contact.icon}
-                              </span>
-                              <span>{contact.value}</span>
-                            </a>
-                          ))}
+                        {person.items.map((contact, index) => (
+                          <motion.a
+                            key={`${person.name}-${contact.value}-${contact.href}-${index}`}
+                            href={contact.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 text-white transition-colors hover:text-white"
+                            initial={{ opacity: 0, x: 16  }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 2.4, delay: index * 1.45 }}
+                          >
+                            <span className="text-amber-200">
+                              {contact.icon}
+                            </span>
+                            <span className="md:text-sm text-xs">{contact.value}</span>
+                          </motion.a>
+                        ))}
                         </div>
                       </div>
                     ))}
