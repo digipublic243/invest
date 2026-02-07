@@ -18,10 +18,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100">
-      <div className="relative overflow-hidden h-screen flex items-center justify-center">
+    <div className="md:min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100 border">
+      <div className=" relative overflow-hidden  flex items-center justify-center h-[91vh]">
         <AppBackground />
-        <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto">
+        <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto h-auto border">
           <div className=" flex w-full justify-center max-w-6xl mx-4">
             <motion.section
               className="w-full space-y-8 text-left text-lg text-zinc-700 dark:text-zinc-200"
@@ -47,15 +47,27 @@ export default function Home() {
                   "Know more",
                 href: "/doc.pdf",
               },
-                          {
+              {
                 title: "Unlocked deals",
-                 description: (
-  <>
-    1. Acquisition of Chemaf by Virtus Mineral Group (USA).
-    <br />
-    2. Acquisition of GEA Solar by Vinergo (Vietnam)
-  </>
-),},
+                description: (
+                  <ol className="list-decimal space-y-1 pl-5">
+                    <li>
+                      Acquisition of Chemaf by 
+                       <span className="block text-amber-200 sm:inline font-semibold">
+                        {" "}
+                        Virtus Mineral Group (USA).
+                      </span>
+                    </li>
+                    <li>
+                      Acquisition of GEA Solar by
+                       <span className="block text-amber-200 sm:inline font-semibold">
+                        {" "}
+                        Vinergo (Vietnam)
+                      </span>
+                    </li>
+                  </ol>
+                ),
+              },
               {
                 title: "Be The Next",
                 //   "Un contact.",
@@ -102,12 +114,12 @@ export default function Home() {
               ].map((item) => (
               <motion.div
                 key={item.title}
-                className="space-y-2"
+                className="space-y-1 md:space-y-2"
                 variants={itemMotion}
               >
                 <div className="flex flex-wrap items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
-                <div className="max-w-4xl font-black font-poppins md:text-8xl text-5xl tracking-tighter silver-3d">
+                <div className="max-w-4xl font-black font-poppins md:text-8xl text-4xl tracking-tighter silver-3d">
   {item.title}
 </div>
 
@@ -129,14 +141,14 @@ export default function Home() {
                     </a>
                   )}
                 </div>
-                <p className="text-base text-zinc-600 dark:text-zinc-300 ">
+                <div className="md:text-base text-xs text-zinc-600 dark:text-zinc-300">
                   {item.description}
-                </p>
+                </div>
                 {item.kind === "contact" && item.contacts ? (
                   <div className="mt-3 space-y-2 text-base">
                     {item.contacts.map((person) => (
                       <div key={person.name} className="space-y-1">
-                        <div className=" font-bold text-white/80 font-poppins text-sm  ">
+                        <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
                           {person.name}
                         </div>
                         <div className="space-y-1">
@@ -146,12 +158,12 @@ export default function Home() {
                               href={contact.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-3 text-white transition-colors hover:text-white text-sm"
+                              className="flex items-center gap-3 text-white transition-colors hover:text-white"
                             >
                               <span className="text-amber-200">
                                 {contact.icon}
                               </span>
-                              <span className="text-sm">{contact.value}</span>
+                              <span className="md:text-sm text-xs">{contact.value}</span>
                             </a>
                           ))}
                         </div>

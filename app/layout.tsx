@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import SeoJsonLd from "@/components/shared/seo-jsonld";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -81,31 +82,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="dark">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Invest In DRC",
-              url: SITE_URL,
-              description:
-                "Plateforme de reference pour investir en RDC. Opportunites, projets et contacts strategiques pour investir en Democratic Republic of Congo.",
-              publisher: {
-                "@type": "Organization",
-                name: "Sycamore Group",
-                url: SITE_URL,
-              },
-            }),
-          }}
-        />
-      </head>
+    <html lang="fr" className="dark" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
         {children}
+        <SeoJsonLd siteUrl={SITE_URL} />
       </body>
     </html>
   );
