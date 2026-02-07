@@ -140,9 +140,9 @@ export default function Home() {
                           {person.name}
                         </div>
                         <div className="space-y-1">
-                          {person.items.map((contact) => (
+                        {person.items.map((contact, index) => (
                             <a
-                              key={`${person.name}-${contact.value}`}
+                            key={`${person.name}-${contact.value}-${contact.href}-${index}`}
                               href={contact.href}
                               target="_blank"
                               rel="noopener noreferrer"
