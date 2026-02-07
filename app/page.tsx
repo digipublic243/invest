@@ -31,6 +31,7 @@ export default function Home() {
             >
               {[
               {
+                id: "zibo-mining",
                 title: "Zibo Mining",
                 icon: <ArrowRightIcon className="h-4 w-4" />,
                 description: (
@@ -42,36 +43,28 @@ export default function Home() {
                 href: "https://zibomines.com/",
               },
               {
-                title: "Prospectus",
-                description:
-                  "Know more",
+                id: "investor-prospectus",
+                title: (
+                  <>
+                    <span className="block sm:inline">Investor</span> Prospectus
+                  </>
+                ),
+                description: "More",
                 href: "/doc.pdf",
               },
               {
-                title: "Unlocked deals",
+                id: "be-the-next",
+                title: "Be The Next",
                 description: (
                   <ol className="list-decimal space-y-1 pl-5">
                     <li>
-                      Acquisition of Chemaf by 
-                       <span className="block text-amber-200 sm:inline font-semibold">
-                        {" "}
-                        Virtus Mineral Group (USA).
-                      </span>
+                      Acquisition of Chemaf by Virtus Mineral Group (USA).
                     </li>
                     <li>
-                      Acquisition of GEA Solar by
-                       <span className="block text-amber-200 sm:inline font-semibold">
-                        {" "}
-                        Vinergo (Vietnam)
-                      </span>
+                      Acquisition of GEA Solar by Vinergo (Vietnam).
                     </li>
                   </ol>
                 ),
-              },
-              {
-                title: "Be The Next",
-                //   "Un contact.",
-                // href: "https://be-the-next.com/",
                 kind: "contact",
                 contacts: [
                   {
@@ -90,7 +83,7 @@ export default function Home() {
                     ],
                   },
                   {
-                    name: "Peter Orena",
+                    name: "Mr Peter C. Orena",
                     items: [
                       {
                         icon: <Mail className="h-4 w-4" />,
@@ -102,24 +95,69 @@ export default function Home() {
                         value: "+243 821 816 662",
                         href: "tel:+243821816662",
                       },
-                      // {
-                      //   icon: <Phone className="h-4 w-4" />,
-                      //   value: "+243 821 816 662",
-                      //   href: "tel:+243821816662",
-                      // },
+                      {
+                        icon: <Phone className="h-4 w-4" />,
+                        value: "+1 516 504 5719",
+                        href: "tel:+15165045719",
+                      },
                     ],
                   },
                 ],
+            
               },
+              // {
+              //   title: "Be The Next",
+              //   //   "Un contact.",
+              //   // href: "https://be-the-next.com/",
+              //   kind: "contact",
+              //   contacts: [
+              //     {
+              //       name: "Senator Bernard Muhindo",
+              //       items: [
+              //         {
+              //           icon: <Mail className="h-4 w-4" />,
+              //           value: "bernard.muhindo@pm.me",
+              //           href: "mailto:bernard.muhindo@pm.me",
+              //         },
+              //         {
+              //           icon: <Phone className="h-4 w-4" />,
+              //           value: "+243 813 991 155",
+              //           href: "tel:+243813991155",
+              //         },
+              //       ],
+              //     },
+              //     {
+              //       name: "Peter Orena",
+              //       items: [
+              //         {
+              //           icon: <Mail className="h-4 w-4" />,
+              //           value: "peter@zibomines.com",
+              //           href: "mailto:peter@zibomines.com",
+              //         },
+              //         {
+              //           icon: <Phone className="h-4 w-4" />,
+              //           value: "+243 821 816 662",
+              //           href: "tel:+243821816662",
+              //         },
+              //         {
+              //           icon: <Phone className="h-4 w-4" />,
+              //           value: "+1 516 504 5719",
+              //           href: "tel:+15165045719",
+              //         },
+              //       ],
+              //     },
+              //   ],
+            
+              //   },
               ].map((item) => (
               <motion.div
-                key={item.title}
+                key={item.id}
                 className="md:space-y-1 space-y-0"
                 variants={itemMotion}
               >
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-end md:items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
-                <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-8xl drop-shadow-2xl">
+                <div className="md:max-w-4xl w-full font-poppins text-5xl font-semibold leading-tight tracking-tight  lg:text-8xl drop-shadow-2xl">
   {item.title}
 </div>
 
@@ -134,44 +172,62 @@ export default function Home() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center text-amber-200 transition-colors hover:text-amber-200text-amber-200 dark:text-amber-200text-amber-200 dark:hover:text-amber-200text-amber-200"
+                      className="pb-2 md:pb-0 group inline-flex items-center text-amber-200 transition-colors hover:text-amber-200text-amber-200 dark:text-amber-200text-amber-200 dark:hover:text-amber-200text-amber-200"
                       aria-label={`Ouvrir ${item.title}`}
                     >
-                      <ArrowRightIcon className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" size={24} />
+                      <ArrowRightIcon className="h-8 w-8  transition-transform duration-300 group-hover:translate-x-1" size={24} />
                     </a>
                   )}
                 </div>
                 <div className="md:text-base text-xs text-zinc-600 dark:text-zinc-300">
-                  {item.description}
+                  {item.title === "Be The Next" && (
+                    <div className="mb-1 flex items-center text-xl md:text-4xl gap-1 pl-2  font-semibold uppercase tracking-wide ">
+                      <ArrowRightIcon className="h-3.5 w-3.5" />
+                      <span>Unlocked deals</span>
+                    </div>
+                  )}
+                  <div className={item.title === "Be The Next" ? "pl-6" : undefined}>
+                    {item.description}
+                  </div>
                 </div>
                 {item.kind === "contact" && item.contacts ? (
                   <div className="mt-3 space-y-1 text-base">
-                    {item.contacts.map((person) => (
-                      <div key={person.name} className="space-y-2">
-                        <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
-                          {person.name}
-                        </div>
-                        <div className="space-y-1">
-                        {person.items.map((contact, index) => (
-                          <motion.a
-                            key={`${person.name}-${contact.value}-${contact.href}-${index}`}
-                            href={contact.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 text-white transition-colors hover:text-white"
-                            initial={{ opacity: 0, x: 16  }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 2.4, delay: index * 1.45 }}
-                          >
-                            <span className="text-amber-200">
-                              {contact.icon}
-                            </span>
-                            <span className="md:text-sm text-xs">{contact.value}</span>
-                          </motion.a>
-                        ))}
-                        </div>
+                    {item.title === "Be The Next" && (
+                      <div className="flex items-center gap-1 pl-2 text-xl md:text-4xl font-semibold uppercase tracking-wide ">
+                        <ArrowRightIcon className="h-3.5 w-3.5" />
+                        <span>Contact</span>
                       </div>
-                    ))}
+                    )}
+                    <div className={item.title === "Be The Next" ? "pl-6 space-y-6" : "space-y-6"}>
+                      {item.contacts.map((person) => (
+                        <div key={person.name} className="space-y-2">
+                          <div className="font-bold text-white/80 font-poppins text-sm md:text-base">
+                            {person.name}
+                          </div>
+                          <div className="space-y-1">
+                            {person.items.map((contact, index) => (
+                              <motion.a
+                                key={`${person.name}-${contact.value}-${contact.href}-${index}`}
+                                href={contact.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 text-white transition-colors hover:text-white"
+                                initial={{ opacity: 0, x: 16 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 2.4, delay: index * 1.45 }}
+                              >
+                                <span className="text-amber-200">
+                                  {contact.icon}
+                                </span>
+                                <span className="md:text-sm text-xs">
+                                  {contact.value}
+                                </span>
+                              </motion.a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ) : null}
               </motion.div>
