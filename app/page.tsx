@@ -18,10 +18,10 @@ export default function Home() {
   };
 
   return (
-    <div className="md:min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100 border">
+    <div className="md:min-h-screen font-sans text-zinc-900 dark:bg-black/50 dark:text-zinc-100 ">
       <div className=" relative overflow-hidden  flex items-center justify-center h-[91vh]">
         <AppBackground />
-        <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto h-auto border">
+        <main className="relative  w-full max-w-6xl  sm:px-10 mx-auto h-auto ">
           <div className=" flex w-full justify-center max-w-6xl mx-4">
             <motion.section
               className="w-full space-y-8 text-left text-lg text-zinc-700 dark:text-zinc-200"
