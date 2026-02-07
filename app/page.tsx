@@ -155,7 +155,7 @@ export default function Home() {
                 className="md:space-y-1 space-y-0"
                 variants={itemMotion}
               >
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-end md:items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
                 <div className="md:max-w-4xl w-full font-poppins text-5xl font-semibold leading-tight tracking-tight  lg:text-8xl drop-shadow-2xl">
   {item.title}
@@ -172,10 +172,10 @@ export default function Home() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center text-amber-200 transition-colors hover:text-amber-200text-amber-200 dark:text-amber-200text-amber-200 dark:hover:text-amber-200text-amber-200"
+                      className="pb-2 md:pb-0 group inline-flex items-center text-amber-200 transition-colors hover:text-amber-200text-amber-200 dark:text-amber-200text-amber-200 dark:hover:text-amber-200text-amber-200"
                       aria-label={`Ouvrir ${item.title}`}
                     >
-                      <ArrowRightIcon className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" size={24} />
+                      <ArrowRightIcon className="h-8 w-8  transition-transform duration-300 group-hover:translate-x-1" size={24} />
                     </a>
                   )}
                 </div>
@@ -198,10 +198,10 @@ export default function Home() {
                         <span>Contact</span>
                       </div>
                     )}
-                    <div className={item.title === "Be The Next" ? "pl-6 " : undefined}>
+                    <div className={item.title === "Be The Next" ? "pl-6 space-y-6" : "space-y-6"}>
                       {item.contacts.map((person) => (
-                        <div key={person.name} className="">
-                          <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base space-x-5">
+                        <div key={person.name} className="space-y-2">
+                          <div className="font-bold text-white/80 font-poppins text-sm md:text-base">
                             {person.name}
                           </div>
                           <div className="space-y-1">
