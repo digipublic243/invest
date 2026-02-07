@@ -82,10 +82,10 @@ export default function Home() {
                  description: (
   <>
     Unlocked deals:
-    <ol>
-      <li>Acquisition of Chemaf by Virtus Mineral Group (USA).</li>
-      <li>Acquisition of GEA Solar by Vinergo (Vietnam)</li>
-    </ol>
+    <br />
+    1. Acquisition of Chemaf by Virtus Mineral Group (USA).
+    <br />
+    2. Acquisition of GEA Solar by Vinergo (Vietnam)
   </>
 ),
                 //   "Un contact.",
