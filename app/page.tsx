@@ -31,6 +31,7 @@ export default function Home() {
             >
               {[
               {
+                id: "zibo-mining",
                 title: "Zibo Mining",
                 icon: <ArrowRightIcon className="h-4 w-4" />,
                 description: (
@@ -42,28 +43,25 @@ export default function Home() {
                 href: "https://zibomines.com/",
               },
               {
-                title: "Prospectus",
-                description:
-                  "Know more",
+                id: "investor-prospectus",
+                title: (
+                  <>
+                    <span className="block sm:inline">Investor</span> Prospectus
+                  </>
+                ),
+                description: "More",
                 href: "/doc.pdf",
               },
               {
+                id: "be-the-next",
                 title: "Be The Next",
                 description: (
                   <ol className="list-decimal space-y-1 pl-5">
                     <li>
-                      Acquisition of Chemaf by 
-                       <span className="block text-amber-200 sm:inline font-semibold">
-                        {" "}
-                        Virtus Mineral Group (USA).
-                      </span>
+                      Acquisition of Chemaf by Virtus Mineral Group (USA).
                     </li>
                     <li>
-                      Acquisition of GEA Solar by
-                       <span className="block text-amber-200 sm:inline font-semibold">
-                        {" "}
-                        Vinergo (Vietnam)
-                      </span>
+                      Acquisition of GEA Solar by Vinergo (Vietnam).
                     </li>
                   </ol>
                 ),
@@ -85,7 +83,7 @@ export default function Home() {
                     ],
                   },
                   {
-                    name: "Peter Orena",
+                    name: "Mr Peter C. Orena",
                     items: [
                       {
                         icon: <Mail className="h-4 w-4" />,
@@ -153,13 +151,13 @@ export default function Home() {
               //   },
               ].map((item) => (
               <motion.div
-                key={item.title}
+                key={item.id}
                 className="md:space-y-1 space-y-0"
                 variants={itemMotion}
               >
                 <div className="flex flex-wrap items-center gap-4">
                 <div className="relative inline-block overflow-hidden">
-                <div className="max-w-4xl font-poppins text-5xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-8xl drop-shadow-2xl">
+                <div className="md:max-w-4xl w-full font-poppins text-5xl font-semibold leading-tight tracking-tight  lg:text-8xl drop-shadow-2xl">
   {item.title}
 </div>
 
