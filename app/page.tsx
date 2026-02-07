@@ -84,7 +84,7 @@ export default function Home() {
     <br />
     2. Acquisition of GEA Solar by Vinergo (Vietnam)
   </>
-),}
+),},
               {
                 title: "Be The Next",
                 //   "Un contact.",
