@@ -76,18 +76,17 @@ export default function Home() {
                   "Know more",
                 href: "/doc.pdf",
               },
-            
-              {
-                title: "Be The Next",
+                          {
+                title: "Unlocked deal",
                  description: (
   <>
-    Unlocked deals:
-    <br />
     1. Acquisition of Chemaf by Virtus Mineral Group (USA).
     <br />
     2. Acquisition of GEA Solar by Vinergo (Vietnam)
   </>
-),
+),}
+              {
+                title: "Be The Next",
                 //   "Un contact.",
                 // href: "https://be-the-next.com/",
                 kind: "contact",
