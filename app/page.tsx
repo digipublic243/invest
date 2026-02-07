@@ -198,10 +198,10 @@ export default function Home() {
                         <span>Contact</span>
                       </div>
                     )}
-                    <div className={item.title === "Be The Next" ? "pl-6" : undefined}>
+                    <div className={item.title === "Be The Next" ? "pl-6 " : undefined}>
                       {item.contacts.map((person) => (
-                        <div key={person.name} className="space-y-2">
-                          <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base">
+                        <div key={person.name} className="">
+                          <div className=" font-bold text-white/80 font-poppins text-sm  md:text-base space-x-5">
                             {person.name}
                           </div>
                           <div className="space-y-1">
